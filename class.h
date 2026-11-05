@@ -76,8 +76,10 @@ public:
         const T* d_ptr = data_.data();
         const T* o_ptr = other.data_.data();
         const std::size_t n = data_.size();
+        const std::size_t work = n; 
+        (void)work;
 
-        #pragma omp parallel for simd if(n > 10000)
+        #pragma omp parallel for if(work > 10000)
         for (std::size_t i = 0; i < n; i++) {
             r_ptr[i] = d_ptr[i] + o_ptr[i];
         }
@@ -93,8 +95,10 @@ public:
         const T* d_ptr = data_.data();
         const T* o_ptr = other.data_.data();
         const std::size_t n = data_.size();
+        const std::size_t work = n; 
+        (void)work;
 
-        #pragma omp parallel for simd if(n > 10000)
+        #pragma omp parallel for if(work > 10000)
         Tensor result(shape_);
         for (std::size_t i = 0; i < n; i++) {
             r_ptr[i] = d_ptr[i] - o_ptr[i];
@@ -115,8 +119,10 @@ public:
         const T* d_ptr = data_.data();
         const T* o_ptr = other.data_.data();
         const std::size_t n = data_.size();
+        const std::size_t work = n; 
+        (void)work;
 
-        #pragma omp parallel for simd if(n > 10000)
+        #pragma omp parallel for if(work > 10000)
         for (std::size_t i = 0; i < n; i++) {
             r_ptr[i] = d_ptr[i] * o_ptr[i];
         }
