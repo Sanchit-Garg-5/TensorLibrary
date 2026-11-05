@@ -20,13 +20,8 @@ int main() {
 
     std::vector<float> data1(10000000, 1.5f);
     std::vector<float> data2(10000000, 2.0f);
-    mt::Tensor<float> T1({10000000}, data1);
-    mt::Tensor<float> T2({10000000}, data2);
-
-
-    std::vector<float> mat_data(1000000, 1.0f);
-    mt::Tensor<float> A({1000, 1000}, mat_data);
-    mt::Tensor<float> B({1000, 1000}, mat_data);
+    mt::Tensor<float> A({1000, 1000}, data1);
+    mt::Tensor<float> B({1000, 1000}, data2);
 
     std::cout << "[Addition Test: 10M Elements]\n";
     omp_set_num_threads(1);
