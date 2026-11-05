@@ -1,4 +1,4 @@
-#include "class_2.h"
+#include "class.h"
 #include <iostream>
 #include <chrono>
 #include <vector>
