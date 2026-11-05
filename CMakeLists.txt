@@ -3,7 +3,7 @@ project(MiniTensorLibrary)
 
 # Force modern C++ standard
 set(CMAKE_CXX_STANDARD 17)
-#enforces that the C++ standard specified by
+#enforces that the C++ standard specified above, if not complied by old version compiler-fails
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find OpenMP package on the system
